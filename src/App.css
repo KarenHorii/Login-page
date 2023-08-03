@@ -1,38 +1,178 @@
-.App {
-  text-align: center;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+    width: 100%;
+    margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    background-color: black;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.wrap-login {
+    width: 390px;
+    padding: 77px 55px 33px 55px;
+    background-color: #444;
+    border-radius: 10px;
+    overflow: hidden;
+} 
+
+.login{
+    width: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.login-title{
+    display: block;
+    font-size: 30px;
+    color: white;
+    line-height: 1.2;
+    text-align: center;
+    padding-bottom: 15px;
 }
 
-.App-link {
-  color: #61dafb;
+.wrap-input{
+    width: 100%;
+    position: relative;
+    border-bottom: 2px solid gray;
+    margin-bottom: 37px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.input{
+    font-size: 15px;
+    color: white;
+    line-height: 1;
+    border: none;
+    display: block;
+    width: 100%;
+    height: 35px;
+    padding: 5px;
+    background-color: transparent; 
+}
+
+.line-input{
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    color: gray;
+}
+
+.line-input::before{
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    background: -webkit-linear-gradient(to left, rgb(17, 188, 174), rgb(81, 81, 218));
+    background: -o-linear-gradient(to left,  rgb(17, 188, 174), rgb(81, 81, 218));
+    background: -moz-linear-gradient(to left,  rgb(17, 188, 174), rgb(81, 81, 218));
+    background: linear-gradient(to left,  rgb(17, 188, 174), rgb(81, 81, 218));
+}
+
+.line-input::after{
+    font-size: 15px;
+    color: #9999;
+    line-height: 1.2;
+    content: attr(data-placeholder);
+    display: block;
+    width: 100%;
+    position: absolute;
+    top: 15px;
+    left: 0;
+    padding-left: 5px;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+}
+
+.input:focus{
+    outline: 0;
+}
+
+.input:focus + .line-input::after{
+    top: -15px;
+}
+
+.input:focus + .line-input::before{
+    width: 100%;
+}
+
+.val + .line-input::after{
+    top: -15px;
+}
+
+.val + .line-input::before{
+    width: 100%;
+}
+
+.container-login-btn{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 13px;
+}
+
+.login-btn{
+    font-size: 15px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    line-height: 1.2;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    background: -webkit-linear-gradient(to left,  rgb(17, 188, 174), rgb(81, 81, 218));
+    background: -o-linear-gradient(to left,  rgb(17, 188, 174), rgb(81, 81, 218));
+    background: -moz-linear-gradient(to left,  rgb(17, 188, 174), rgb(81, 81, 218));
+    background: linear-gradient(to left,  rgb(17, 188, 174), rgb(81, 81, 218));
+}
+
+.login-btn:hover{
+    cursor: pointer;
+    background: #444;
+    border: 1px solid aqua;
+}
+
+.text-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.text1{
+    font-size: 14px;
+    color: white;
+    line-height: 1.5;
+    text-decoration: none;
+    padding: 5px;
+}
+
+.text2{
+    font-size: 14px;
+    color: aqua;
+    line-height: 1.5;
+    text-decoration: none;
+}
+
+.text2:hover{
+    text-decoration: underline;
 }
